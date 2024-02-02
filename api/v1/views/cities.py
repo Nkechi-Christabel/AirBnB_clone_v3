@@ -1,3 +1,8 @@
+
+#!/usr/bin/python3
+"""
+A script that handles all Cities default RESTFul API actions.
+"""
 from flask import jsonify, request, abort
 from api.v1.views import app_views
 from models import storage
