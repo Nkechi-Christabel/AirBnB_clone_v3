@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 A script that handles all Cities default RESTFul API actions.
