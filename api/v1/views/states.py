@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 A script that handles all default RESTFul API actions.
@@ -9,7 +8,7 @@ from models import storage
 from models.state import State
 
 
-@app_views.route('/states', methods=['GET'])
+@app_views.route('/states', methods=['GET'], strict_slashes=False)
 def get_states():
     """Retrieves the list of all State objects"""
     states = [state.to_dict() for state in storage.all(State).values()]
