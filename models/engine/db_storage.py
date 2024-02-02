@@ -95,13 +95,14 @@ class DBStorage:
             The number of objects in storage matching the class.
             If no class is passed, returns the count of all objects in storage.
         """
-        if cls:
+        """if cls:
             return self.__session.query(cls).count()
         else:
             total_count = 0
             for cls_name in classes.values():
                 total_count += self.__session.query(cls_name).count()
-            return total_count
+            return total_count"""
+        return len(self.all(cls))
 
     def close(self):
         """call remove() method on the private session attribute"""
