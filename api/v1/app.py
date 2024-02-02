@@ -17,6 +17,7 @@ def not_found_error(error):
     """Handle 404 errors by returning a JSON-formatted response."""
     return jsonify({"error": "Not found"}), 404
 
+
 @app.teardown_appcontext
 def teardown_appcontext(exception):
     """Remove the current SQLAlchemy Session"""
