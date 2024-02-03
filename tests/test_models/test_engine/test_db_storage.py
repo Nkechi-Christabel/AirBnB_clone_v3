@@ -79,7 +79,7 @@ test_db_storage.py'])
 
     def test_count(self):
         old_count = models.storage.count(State)
-        state = State(name="Some state")
+        state = State(name="Lagos")
         models.storage.new(state)
         models.storage.save()
         new_count = models.storage.count(State)
