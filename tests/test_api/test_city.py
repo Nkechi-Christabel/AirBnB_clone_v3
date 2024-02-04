@@ -8,7 +8,7 @@ import os
 
 
 class FlaskTestCase(unittest.TestCase):
-    data = {"name": "California"}
+    data = {"name": "Lagos"}
 
     @classmethod
     def setUpClass(cls):
