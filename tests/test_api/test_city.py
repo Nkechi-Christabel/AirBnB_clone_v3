@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from api.v1.app import app as app
+from api.v1.app import app
 from flask import Flask, make_response, jsonify, json
 import unittest
 import pprint
@@ -7,8 +7,6 @@ import ast
 import os
 
 
-@unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db',
-                 "Testing FileStorage")
 class FlaskTestCase(unittest.TestCase):
     data = {"name": "California"}
 
@@ -58,7 +56,7 @@ class FlaskTestCase(unittest.TestCase):
         city_id = dic_by_id['id']
 
         response = tester.put('/api/v1/cities/{}'.format(city_id),
-                              json={'name': 'CALLAO'})
+                              json={'name': 'Nkechi'})
         self.assertEqual(response.status_code, 200)
         data1 = response.data.decode('UTF-8')
         mydata = ast.literal_eval(data1)
