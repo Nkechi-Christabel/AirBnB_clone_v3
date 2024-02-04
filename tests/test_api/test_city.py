@@ -7,6 +7,8 @@ import ast
 import os
 
 
+@unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db',
+                 "Testing FileStorage")
 class FlaskTestCase(unittest.TestCase):
     data = {"name": "California"}
 
