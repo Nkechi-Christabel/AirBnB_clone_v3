@@ -52,7 +52,7 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """Returns a dictionary representation of the instance"""
+        """returns a dictionary containing all keys/values of the instance"""
         new_dict = self.__dict__.copy()
         if "created_at" in new_dict:
             new_dict["created_at"] = new_dict["created_at"].strftime(time)
@@ -61,7 +61,7 @@ class BaseModel:
         new_dict["__class__"] = self.__class__.__name__
         if "_sa_instance_state" in new_dict:
             del new_dict["_sa_instance_state"]
-        if storage_t == "db" and isinstance(self, User):
+        if models.storage_t == "db" and 'password' in new_dict:
             new_dict.pop('password', None)
         return new_dict
 

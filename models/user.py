@@ -28,6 +28,8 @@ class User(BaseModel, Base):
     def __init__(self, *args, **kwargs):
         """initializes user"""
         super().__init__(*args, **kwargs)
+        if 'password' in kwargs:
+            self.password = self._hash_password(kwargs['password'])
 
     def _hash_password(self, password):
         """Hashes the password using MD5"""
