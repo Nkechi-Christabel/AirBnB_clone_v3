@@ -4,6 +4,8 @@ import unittest
 import os
 
 
+@unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db',
+                 "Testing FileStorage")
 class FlaskTestCase(unittest.TestCase):
     data = {"name": "Test Place", "user_id": "user_id", "city_id": "city_id"}
 
